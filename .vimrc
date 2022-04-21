@@ -1,61 +1,63 @@
-" $BJ8;z%3!<%I(B
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
+" 文字コード
+set fenc=utf-8
 
 "setting"
-" $B%P%C%/%"%C%W%U%!%$%k$r:n$i$J$$(B
+" バックアップファイル作らない
 set nobackup
-" $B%9%o%C%W%U%!%$%k$r:n$i$J$$(B
+" スワップファイル作らない
 set noswapfile
-" $BJT=8Cf$N%U%!%$%k$,JQ99$5$l$?$i<+F0$GFI$_D>$9(B
+" 編集中のファイルが変更されたら自動で読み直す
 set autoread
-" $B%P%C%U%!$,JT=8Cf$G$b$=$NB>$N%U%!%$%k$r3+$1$k$h$&$K(B
+" バッファが編集中でも他のファイルを開けるように
 set hidden
-" $BF~NOCf$N%3%^%s%I$r%9%F!<%?%9$KI=<($9$k(B
+" 入力中のコマンドをステータスに表示
 set showcmd
-" $B%9%F!<%?%9%i%$%s$r>o$KI=<((B
+" ステータスラインを常に表示
 set laststatus=2
-" $B%3%^%s%I%i%$%s$NJd40(B
+" コマンドラインの補完
 set wildmode=list:longest
-" $B%3%^%s%I%i%$%sJd400lMw(B
+" コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
 set wildmenu
-" $B%&%#%s%I%&$N1&2<$K$^$@<B9T$7$F$$$J$$F~NOCf$N%3%^%s%I$rI=<((B
+" 入力中のコマンドを表示する
 set showcmd
+" ステータス行に表示させる情報の指定(どこからかコピペしたので細かい意味はわかっていない)
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+" 括弧入力時の対応する括弧を表示
+set showmatch
 
-"$B8+$?L\7O(B"
-" $B%7%s%?%C%/%9%O%$%i%$%H$NM-8z2=(B
+"見た目"
+" シンタックスハイライト
 syntax on
-" $B%&%$%s%I%&$N%?%$%H%k%P!<$K%U%!%$%k$N%Q%9>pJsEy$rI=<($9$k(B
+" ウインドウのタイトルバーにファイルのパス情報等を表示する 
 set title
-" $B9THV9f(B
+" 行番号表示
 set number
-" $B%3%a%s%H$N?'$r?e?'(B
+" コメント水色に
 hi Comment ctermfg=Blue
 " tab
 set tabstop=4
 set shiftwidth=4
 set expandtab
-" indent$B7O(B
+" indent
 set autoindent
 set smartindent
 set cindent
 
-"$B8!:w7O(B
-" $B8!:wJ8;zNs$,>.J8;z$N>l9g$OBgJ8;z>.J8;z$r6hJL$J$/8!:w$9$k(B
+"検索"
+" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
-" $B8!:wJ8;zNs$KBgJ8;z$,4^$^$l$F$$$k>l9g$O6hJL$7$F8!:w$9$k(B
+" 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" $B8!:wJ8;zNsF~NO;~$K=g<!BP>]J8;zNs$K%R%C%H$5$;$k(B
+" 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" $B8!:w;~$K:G8e$^$G9T$C$?$i:G=i$KLa$k(B
+" 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" $B8!:w8l$r%O%$%i%$%HI=<((B
+" 検索語をハイライト表示
 set hlsearch
-" ESC$BO"BG$G%O%$%i%$%H2r=|(B
-nmap <ESC><ESC> :nohlsearch<CR><Esc>
+" ESC連打でハイライト解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-"$BJd407O(B"
+"補完"
 inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
@@ -63,5 +65,6 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap [ []<left>
-" $B?@(B jj$B$7$+>!$?$s(B
+
+"神"
 inoremap <silent> jj <ESC>
