@@ -68,3 +68,20 @@ inoremap [ []<left>
 
 "神"
 inoremap <silent> jj <ESC>
+
+"方向キーの無効化
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+"入力モード時にcontrolキーを押しながら、h,j,k,lでカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
