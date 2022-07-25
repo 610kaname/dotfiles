@@ -1,0 +1,50 @@
+iPad smart keyboard folio
+key
+CapsLock = ESC 
+option + ¥ = \
+
+置換
+:%s/before/after/gc
+
+補完
+ctrl + n
+ctrl + p
+
+挿入モードへ
+O
+I i a A
+o
+
+カーソルの移動
+gg
+{
+    k
+0^ h l $
+    j
+}
+G
+
+画面移動
+ctrl + u 半画面分 上へ
+ctrl + d 半画面分 下へ
+ctrl + b 一画面分 上へ
+ctrl + f 一画面分 下へ
+
+単語移動
+w_word_e w_word_e w_word_e
+b_back b_back b_back
+
+スペース移動
+W_単語_E W_単語_E W_単語_E 
+B_単語 B_単語 B_単語 
+
+単語消し
+ciw = change inner word
+daw = delete a word
+diw = delete inner word
+
+練習用
+w_word_e w_word_e w_word_e
+w_word_e w_word_e w_word_e
+w_word_e w_word_e w_word_e
+w_word_e w_word_e w_word_e
